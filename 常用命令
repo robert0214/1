@@ -51,6 +51,12 @@ inset操作模式：  按 i（insert）按o （换行）按a(后退一格)  退�
 
 保存退出操作：按住啊shift + ：   在出现的：后面 wq 这是保存退出 直接按q（在没有任何操作下）  q! 加上！号，强制退出
 
+    
+查看tcp连接数
+netstat -an |grep 'ESTABLISHED' |grep 'tcp' |wc -l  
+ 
+查看当前linux的版本
+cat /etc/redhat-release
 
 //修改时间
 date -s "2018-04-10 06:02:59" 指定时间
