@@ -1,0 +1,70 @@
+rm -rf XX 删除
+
+ll   列出文件 ls -al
+
+cd   更换目录  cd /  最顶端更目录  cd etc/yum.repos.d/    yum源目录
+pwd  显示当前目录
+
+httpd -V  查看Apache、版本
+
+service httpd status|start|stop
+
+yum remove httpd\*  卸载apache
+cd /usr/lib64/httpd/modules/  apache扩展模块目录
+
+service nginx status|start|stop
+
+netstat -tlnp   查看再运行的服务
+
+chkconfig mysqld(服务名) on    服务开机自动启动
+
+service mysqld status|start|stop
+
+mysql -uroot -p 进入数据库管理命令
+show databases;
+
+
+php -v   查看php版本
+cd /usr/lib64/php/modules/   php扩展模块目录
+
+tar zxvf  解压tar.gz格式
+unzip -q -r 解压.zip格式
+
+yum install lrzsz 
+rz 上传文件  sz xx  下载文件
+
+history 查看历史记录
+
+ps aux |grep yum(可替换)   ps aux 查看服务进程 grep过滤 关键字
+ yum clean all清理yum源缓存
+
+pkill -9 nginx(服务名)  批量杀死进程 
+
+/etc/init.d/ 这个目录下 都是 启动服务的命令
+
+vim编辑器使用 
+inset操作模式：  按 i（insert）按o （换行）按a(后退一格)  退出编辑模式按 ESC键  
+
+打开VIM默认是阅读模式：dd删除一行  u恢复上一级操作  yy复制 举例复制4行代码，移动到第一行，按下4yy。移动到目标位置，按p 黏贴  查找关键字 按/，如果有多个相同的关键字按n 。快捷替换按r 再按想换的关键字。 跳至目标行 按行数 再按 shift + g
+
+一定要回到阅读模式才能保存退出
+
+保存退出操作：按住啊shift + ：   在出现的：后面 wq 这是保存退出 直接按q（在没有任何操作下）  q! 加上！号，强制退出
+
+
+//修改时间
+date -s "2018-04-10 06:02:59" 指定时间
+service ntpd stop 时间服务停掉 恢复时间之前
+
+ntpdate 1.cn.pool.ntp.org同步世界标准时间服务器
+/etc/init.d/ntpd start 开启时间服务
+
+ mv * /data/guming/public_html/移动当前目录下的所有文件到/data/guming/public_html/
+
+useradd  用户名   添加用户
+vim /etc/passwd   用户密码文件
+
+先安装svn服务器 配置svn服务，启动svn服务，把本地的代码提交到svn服务器上
+配置虚拟主机，配置域名，代码目录等
+把svn代码chkout到代码目录中
+配置钩子文件，修改配置，赋予执行权限
